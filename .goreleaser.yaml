@@ -139,3 +139,12 @@ brews:
       2. Open: http://localhost:8080
       
       The app will auto-configure itself on first run.
+
+dockers:
+  - id: scriberr-cuda-11-8
+    image_templates:
+      - ghcr.io/teije/scriberr:cuda-11.8
+    dockerfile: Dockerfile.cuda
+    use: buildx
+    build_flag_templates:
+      - "--platform=linux/amd64"
